@@ -5,6 +5,11 @@ var path = require('path'); // core node module for working and handling paths.
 var cookieParser = require('cookie-parser'); // Helps to handle cookies.
 var bodyParser = require('body-parser'); // extracts methods parameter and add a body object to the request. 
 var logger = require('morgan'); // middleware for logging requests and responses.
+var socket_io = require('socket.io');
+
+const io = socket_io();
+app.io = io;
+const socket_init = require('./socket/socket_init')(io);
 
 var passport = require('passport'); // A middleware for authentication of users.
 var authenticate = require('./authenticate'); // authentication strategy defined.
