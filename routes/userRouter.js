@@ -5,7 +5,6 @@ const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const async = require('async');
 
-
 const passport = require('passport');
 const authenticate = require('../authenticate');
 const cors = require('./cors');
@@ -18,7 +17,6 @@ userRouter.use(bodyParser.json());
 userRouter.options('*', cors.corsWithOptions, (req, res) => {
   res.sendStatus(200);
 });
-
 
 
 userRouter.post('/signup', cors.corsWithOptions, (req, res, next) => {
@@ -273,6 +271,7 @@ userRouter.get('/checkJWTToken', cors.corsWithOptions, (req, res, next) => {
     }
   })(req, res);
 });
+
 
 
 module.exports = userRouter;

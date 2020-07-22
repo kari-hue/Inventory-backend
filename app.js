@@ -5,7 +5,6 @@ var path = require('path'); // core node module for working and handling paths.
 var cookieParser = require('cookie-parser'); // Helps to handle cookies.
 var bodyParser = require('body-parser'); // extracts methods parameter and add a body object to the request. 
 var logger = require('morgan'); // middleware for logging requests and responses.
-
 var passport = require('passport'); // A middleware for authentication of users.
 var authenticate = require('./authenticate'); // authentication strategy defined.
 
@@ -41,6 +40,7 @@ app.use(passport.initialize());
 
 
 app.use(express.static(path.join(__dirname, 'public')));  // static file to be linked and accessed from public folder.
+
 
 // initialized all routers
 app.use('/', indexRouter);

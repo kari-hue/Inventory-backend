@@ -7,6 +7,7 @@ const cors = require('./cors');
 
 const Drone = require('../models/drone');
 
+
 const droneRouter = express.Router();
 
 droneRouter.use(bodyParser.json());
@@ -87,6 +88,7 @@ droneRouter.route('/:droneId')
             }, (err) => next(err))
             .catch((err) => next(err));
     });
+
 
 
 module.exports = droneRouter;
